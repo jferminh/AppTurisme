@@ -5,12 +5,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     ArrayList<MainData> data;
-    RecyclerView recyclerView;
+    public RecyclerView recyclerView;
+    public static View.OnClickListener mainOnClickListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,10 +21,11 @@ public class MainActivity extends AppCompatActivity {
         data = new ArrayList<>();
         recyclerView = findViewById(R.id.myRecycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+//
         llenarData();
         RecyclerView.Adapter adapter = new MainAdapter(data);
         recyclerView.setAdapter(adapter);
+        mainOnClickListener = new mainOnClickListener(this);
     }
 
     private void llenarData() {
