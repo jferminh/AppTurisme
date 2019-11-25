@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -13,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<MainData> data;
     public RecyclerView recyclerView;
     public static View.OnClickListener mainOnClickListener;
+    public static int currentItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +28,9 @@ public class MainActivity extends AppCompatActivity {
         llenarData();
         RecyclerView.Adapter adapter = new MainAdapter(data);
         recyclerView.setAdapter(adapter);
-        mainOnClickListener = new mainOnClickListener(this);
+        mainOnClickListener = new MainOnClickListener(this);
+        recyclerView.setOnClickListener(mainOnClickListener);
+       // startActivity(new Intent(getApplicationContext(), DetailActivity.class));
     }
 
     private void llenarData() {
@@ -39,4 +44,22 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    private class MainOnClickListener implements View.OnClickListener {
+
+        private final Context context;
+
+        private MainOnClickListener(Context context) {
+            this.context = context;
+        }
+
+
+        @Override
+        public void onClick(View v) {
+            currentItem = recyclerView.getChildAdapterPosition(v);
+            startActivity(new Intent(context.getApplicationContext(), DetailActivity.class));
+        }
+    }
+
+
 }
