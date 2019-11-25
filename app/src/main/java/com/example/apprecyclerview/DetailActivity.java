@@ -23,6 +23,9 @@ public class DetailActivity extends AppCompatActivity {
     View.OnTouchListener listener;
     private int ImageIndex;
     ImageView detailImage = findViewById(R.id.detail_image);
+    TextView detailName = findViewById(R.id.detail_name);
+    TextView detailText = findViewById(R.id.detail_text);
+    ImageView detailWeblink = findViewById(R.id.detail_weblink);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +42,7 @@ public class DetailActivity extends AppCompatActivity {
         ImageIndex = 0;
 //        ImageView detailImage = findViewById(R.id.detail_image);
         detailImage.setOnTouchListener(listener);
-        TextView detailName = findViewById(R.id.detail_name);
-        TextView detailText = findViewById(R.id.detail_text);
-        ImageView detailWeblink = findViewById(R.id.detail_weblink);
+
 
         detailText.setMovementMethod(new ScrollingMovementMethod());
 

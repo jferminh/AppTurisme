@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         mainOnClickListener = new MainOnClickListener(this);
         recyclerView.setOnClickListener(mainOnClickListener);
-       // startActivity(new Intent(getApplicationContext(), DetailActivity.class));
+//        startActivity(new Intent(getApplicationContext(), DetailActivity.class));
     }
 
     private void llenarData() {
@@ -45,6 +45,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void clique(View view) {
+//        currentItem = recyclerView.getChildAdapterPosition(view);
+//        startActivity(new Intent(getApplicationContext(), DetailActivity.class));
+    }
+
     private class MainOnClickListener implements View.OnClickListener {
 
         private final Context context;
@@ -57,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             currentItem = recyclerView.getChildAdapterPosition(v);
-            startActivity(new Intent(context.getApplicationContext(), DetailActivity.class));
+            startActivity(new Intent(getApplicationContext(), DetailActivity.class));
         }
     }
 
