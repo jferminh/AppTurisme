@@ -23,14 +23,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         data = new ArrayList<>();
         recyclerView = findViewById(R.id.myRecycler);
+        recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//
+
         llenarData();
         RecyclerView.Adapter adapter = new MainAdapter(data);
         recyclerView.setAdapter(adapter);
         mainOnClickListener = new MainOnClickListener(this);
-        recyclerView.setOnClickListener(mainOnClickListener);
-//        startActivity(new Intent(getApplicationContext(), DetailActivity.class));
+
     }
 
     private void llenarData() {
@@ -45,10 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void clique(View view) {
-//        currentItem = recyclerView.getChildAdapterPosition(view);
-//        startActivity(new Intent(getApplicationContext(), DetailActivity.class));
-    }
+
 
     private class MainOnClickListener implements View.OnClickListener {
 

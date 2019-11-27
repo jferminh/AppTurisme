@@ -22,28 +22,16 @@ public class DetailActivity extends AppCompatActivity {
     private GestureDetector detector;
     View.OnTouchListener listener;
     private int ImageIndex;
-    ImageView detailImage = findViewById(R.id.detail_image);
-    TextView detailName = findViewById(R.id.detail_name);
-    TextView detailText = findViewById(R.id.detail_text);
-    ImageView detailWeblink = findViewById(R.id.detail_weblink);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        detector = new GestureDetector(this, new GalleryGestureDetector());
-        listener = new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                return detector.onTouchEvent(event);
-            }
-        };
-        ImageIndex = 0;
-//        ImageView detailImage = findViewById(R.id.detail_image);
-        detailImage.setOnTouchListener(listener);
-
-
+        ImageView detailImage = findViewById(R.id.detail_image);
+        TextView detailName = findViewById(R.id.detail_name);
+        TextView detailText = findViewById(R.id.detail_text);
         detailText.setMovementMethod(new ScrollingMovementMethod());
 
         int i = MainActivity.currentItem;
@@ -53,11 +41,24 @@ public class DetailActivity extends AppCompatActivity {
         detailText.setText(MainDataset.detailTextArray[i]);
 
 
+// onTouch
+        detector = new GestureDetector(this, new GalleryGestureDetector());
+        listener = new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return detector.onTouchEvent(event);
+            }
+        };
+        ImageIndex = 0;
+        detailImage.setOnTouchListener(listener);
 
     }
 
     private class GalleryGestureDetector implements GestureDetector.OnGestureListener {
         private int item;
+        ImageView detailImage = findViewById(R.id.detail_image);
+
+
         {
             item = MainActivity.currentItem;
         }
@@ -69,6 +70,7 @@ public class DetailActivity extends AppCompatActivity {
 
         @Override
         public void onShowPress(MotionEvent e) {
+
             detailImage.setElevation(4);
 
         }

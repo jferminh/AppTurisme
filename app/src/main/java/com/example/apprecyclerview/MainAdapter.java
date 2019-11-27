@@ -18,7 +18,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder
         this.mainData = mainData;
     }
 
-    public class MainViewHolder extends RecyclerView.ViewHolder {
+    static class MainViewHolder extends RecyclerView.ViewHolder {
         private final ImageView imgImage;
         private final TextView txtName;
         private final TextView txtInfo;
@@ -35,18 +35,21 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder
 
     @NonNull
     @Override
-    public MainViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MainAdapter.MainViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.lieu_card, parent, false);
-
+        view.setOnClickListener(MainActivity.mainOnClickListener);
         return new MainViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MainViewHolder holder, int position) {
-        holder.imgImage.setImageResource(mainData.get(position).getImage());
-        holder.txtName.setText(mainData.get(position).getName());
-        holder.txtInfo.setText(mainData.get(position).getInfo());
+    public void onBindViewHolder(@NonNull MainAdapter.MainViewHolder holder, int position) {
+        ImageView imgImage = holder.imgImage;
+        TextView txtName = holder.txtName;
+        TextView txtInfo = holder.txtInfo;
+        imgImage.setImageResource(mainData.get(position).getImage());
+        txtName.setText(mainData.get(position).getName());
+        txtInfo.setText(mainData.get(position).getInfo());
 
     }
 
