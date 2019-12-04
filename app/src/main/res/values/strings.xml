@@ -1,3 +1,17 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">AppRecyclerView</string>
+    <string name="caravelleInfo">"Le phare de la Pointe de la Caravelle est un phare situé dans la commune de La Trinité sur la côte est de la Martinique. Il se situe au bout de la presquîle de la Caravelle, désormais réserve naturelle dépendant du Parc naturel régional de Martinique. Situé au sommet d\'un pic basaltique d'environ 115 m d'altitude, il s'élève à environ 130 m au dessus de la mer, ce qui en fait le plus haut phare naturel de France1 malgré sa taille modeste. Il fut mis en service en 1862. Aujourd'hui automatisé grâce à l'énergie solaire, il n'est plus gardé depuis 1970."</string>
+    <string name="saintpierreInfo">"Saint-Pierre est une commune française et une sous-préfecture du département (et région) de la Martinique. Saint-Pierre est située à 31 km au nord de Fort-de-France sur la côte caraïbe au sud-ouest de la montagne Pelée. C\'est la plus ancienne localité de la Martinique. Ses habitants sont appelés les Pierrotains (aussi écrit Pierrotins) et les Pierrotines."</string>
+    <string name="diamantInfo">"Le rocher du Diamant est une petite île inhabitée située dans la mer des Caraïbes au sud-ouest de la Martinique, à deux kilomètres environ de la pointe du Diamant, dans le canal de Sainte-Lucie. L\'îlot doit son nom à sa forme générale, en pointe et biseautée, ainsi qu'aux reflets de ses parois à certaines heures du jour, évoquant ceux d'une pierre précieuse. Il a donné son nom à la ville qui lui fait face sur la côte."</string>
+    <string name="clementInfo">"L’Habitation Clément est un vaste domaine agricole de 160 hectares, niché dans la commune du François, au sud-est de la Martinique. Dominé par une maison créole datant du XVIIIe siècle, ce lieu – classé aux monuments historiques en 1996 – réunit au cœur des plantations de canne à sucre un site patrimonial majeur, un centre d’art contemporain reconnu et une maison de rhum réputée. Chaque année, près de 100.000 visiteurs viennent découvrir la particularité de cet endroit exceptionnel qui a su conserver sa fonction agricole et industrielle, tout en faisant découvrir le monde botanique, le monde du rhum, le monde créole et le monde industriel. Des outils pédagogiques sont mis en place pour accompagner les scolaires dans leur découverte. Reconnue «Maison des illustres» en 2011, l’Habitation Clément cherche aujourd’hui à préserver son authenticité et à poursuivre ses efforts de valorisation patrimoniale."</string>
+    <string name="peleeInfo">"La montagne Pelée est un volcan actif situé dans le Nord de la Martinique, une île des petites Antilles constituant un département d\'outre-mer de France. La montagne, un stratovolcan gris calco-alcalin, est notamment connue pour son éruption de 1902 qui a entraîné la destruction de la ville de Saint-Pierre située à ses pieds et au cours de laquelle près de 30 000 personnes sont mortes. Cette éruption a servi à caractériser le type éruptif péléen tirant son nom du volcan."</string>
+
+    <string-array name="info">
+        <item>@string/caravelleInfo</item>
+        <item>@string/saintpierreInfo</item>
+        <item>@string/diamantInfo</item>
+        <item>@string/clementInfo</item>
+        <item>@string/peleeInfo</item>
+    </string-array>
+
 </resources>

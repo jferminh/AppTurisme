@@ -1,5 +1,7 @@
 package com.example.apprecyclerview;
 
+//import static androidx.core.graphics.drawable.IconCompat.getResources;
+
 public class MainDataset {
     static Integer[] imageArray = {
             R.drawable.caravelle,
@@ -15,12 +17,19 @@ public class MainDataset {
             "L'Habitation Clément",
             "La montagne Pelée"
     };
+//    static String[] infoArray = getResources().getStringArray(R.array.info);
+
+//    static String[] infoArray = {
+//            getResources().getString(R.string.caravelleInfo),
+//            getResources().getString(R.string.saintpierreInfo)
+//
+//    }
     static String[] infoArray = {
-            "La Trinite",
-            "Saint Pierre",
-            "Le Diamant",
-            "Le François",
-            "Morne Rouge"
+            "1",
+        "2",
+        "3",
+        "4",
+        "5"
     };
     static Integer[] detailImageArray = {
             R.drawable.caravelle,
@@ -43,6 +52,16 @@ public class MainDataset {
             "https://fr.wikipedia.org/wiki/Rocher_du_Diamant",
             "https://fr.wikipedia.org/wiki/Le_Marin"
     };
+    private static Integer[] caravelle = {
+            R.drawable.caravelle1,
+            R.drawable.caravelle2
+
+    };
+    private static Integer[] saintpierre = {
+            R.drawable.caravelle1,
+            R.drawable.caravelle2
+
+    };
     private static Integer[] diamant = {
             R.drawable.diamant1,
             R.drawable.diamant2,
@@ -50,11 +69,12 @@ public class MainDataset {
             R.drawable.diamant4
 
     };
-    private static Integer[] caravelle = {
+    private static Integer[] clement = {
             R.drawable.caravelle1,
             R.drawable.caravelle2
 
     };
+
     private static Integer[] pelee = {
             R.drawable.montagne_pelee1,
             R.drawable.montagne_pelee2,
@@ -62,8 +82,11 @@ public class MainDataset {
 
     };
     static Integer[][] galleryArray = {
+            caravelle,
+            saintpierre,
             diamant,
-            pelee,
-            caravelle
+            clement,
+            pelee
     };
+
 }
